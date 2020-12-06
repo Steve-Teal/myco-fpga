@@ -4,7 +4,7 @@ myco-fpga is a FPGA implementation of the MyCo (My little Computer) system, also
 
 With this system you can enter, run and edit programs with just three pushbuttons and 4 LEDs. To get you started, several demo programs are pre-loaded. These can easily be modified or overwritten by your own programs.
 
-![System block diagram](pictures/myco1.png)
+![System block diagram](pictures/myco1.jpg)
 
 ## Installation
 
