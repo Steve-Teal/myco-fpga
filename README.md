@@ -35,7 +35,7 @@ The block diagram shows the connections to the FPGA. This project should build o
 
 The emulator is pre-assembled and stored in the file **myco-mem.vhd**. The source code **myco.asm** can be modified with a text editor and assembled using the PASM assembler. The PASM assembler is available [here](https://github.com/Steve-Teal/pumpkin-cpu)  
 
-To run this command to assemble the emulator.
+Run this command to assemble the emulator.
 
 ```
 
