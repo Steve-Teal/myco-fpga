@@ -6,26 +6,26 @@ With this system you can enter, run and edit programs with just three pushbutton
 
 To get you started, several demo programs are pre-loaded, selectable by the DIP switches. The demo programs can easily be modified or overwritten by your own programs.  
 
+A video showing a basic demonstration is available  [here](https://www.youtube.com/watch?v=95f5JvLq4_Q&t=5s)
+
+This is not a direct implementation of MyCo/TPS on an FPGA. It is a emulator, running on a pumpkin-cpu. The assembly language program for this emulator is in the file **myco.asm**. More information about the pumpkin-cpu core and be found [here](https://github.com/Steve-Teal/pumpkin-cpu)
+
 ![prototype](pictures/myco1.jpg)
 
-## Useful links
-
-[YouTube](https://www.youtube.com/watch?v=95f5JvLq4_Q&t=5s)
-[GitHub](https://github.com/Steve-Teal/pumpkin-cpu)
 
 ## Installation
 
-First you will need to find a FPGA evaluation board with at least 3 pushbuttons, 4 LEDS and a bank of 4 switches. The 4 switches are optional if you do not want to take advantage of the demo programs. I used a 'MachXO2 Pico Board' from Lattice Semiconductor wired to a small piece of stripboard with the necessary components on. This as an advantage of creating a layout that makes entering programs easier.    
+First you will need to find a FPGA evaluation board with at least 3 pushbuttons, 4 LEDS and a bank of 4 switches. The 4 switches are optional if you do not want to take advantage of the demo programs. I used a 'MachXO2 Pico Board' from Lattice Semiconductor wired to a small piece of stripboard with the necessary components on. This as an advantage of creating a layout that makes entering programs easier.  
 
-Create a project with your FPGA tool and add all the VHDL files in this repo.
+Create a project with your FPGA tool and add all the VHDL files in this repo:
 
 **myco.vhd**  
-**myco_mem.vhd** 
-**pumpkin.vhd**
+**myco_mem.vhd**  
+**pumpkin.vhd**  
 **timer.vhd**  
 **pwm.vhd**  
 
-If you're using a Pico Board you can use the **myco.lpf** file with Lattice Diamond, this file contains all the pin assignments shown in the diagram below. The switch inputs all have pull-ups enabled and expect to be pulled down when the switches are activated. 
+If you're using a Pico Board and Lattice Diamond, you can use the **myco.lpf** file which contains all the pin assignments shown in the diagram below. The switch inputs all have pull-ups enabled and expect to be pulled down when the switches are activated. 
 
 ![bock diagram](pictures/myco2.png)
 
