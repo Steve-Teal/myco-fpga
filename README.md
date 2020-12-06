@@ -1,27 +1,43 @@
 # myco-fpga
-A 4-bit computer system for FPGAs
+A 4-bit computer system for FPGAs  
 myco-fpga is a FPGA implementation of the MyCo (My little Computer) system, also known in German as TPS (Tastenprogrammierbare Steuerung).
 
-With this system you can enter, run and edit programs with just three pushbuttons and 4 LEDs. To get you started, several demo programs are pre-loaded. These can easily be modified or overwritten by your own programs.
+With this system you can enter, run and edit programs with just three pushbuttons and 4 LEDs. The system also includes 4 digital inputs, typically connected to a array of DIP switches and a PWM output which can connect to an LED. This FPGA version does not have the two ADC channels that are available on the microcontroller version of MyCo/TPS. This feature will be added in the future.  
 
-![System block diagram](pictures/myco1.jpg)
+To get you started, several demo programs are pre-loaded, selectable by the DIP switches. The demo programs can easily be modified or overwritten by your own programs.  
+
+![prototype](pictures/myco1.jpg)
+
+## Useful links
+
+[YouTube](https://www.youtube.com/watch?v=95f5JvLq4_Q&t=5s)
+[GitHub](https://github.com/Steve-Teal/pumpkin-cpu)
 
 ## Installation
 
-All the VHDL files to build myco-fpga included. The exact build process will vary from FPGA to FPGA. You will also need connect external hardware to your FPGA. A minimum system will require 3 push buttons and 4 LEDS. To get the most out of the system a 4-way DIP switch can be used and connected to the 4 in
+First you will need to find a FPGA evaluation board with at least 3 pushbuttons, 4 LEDS and a bank of 4 switches. The 4 switches are optional if you do not want to take advantage of the demo programs. I used a 'MachXO2 Pico Board' from Lattice Semiconductor wired to a small piece of stripboard with the necessary components on. This as an advantage of creating a layout that makes entering programs easier.    
 
-![System block diagram](pictures/myco2.png)
+Create a project with your FPGA tool and add all the VHDL files in this repo.
+
+**myco.vhd**  
+**myco_mem.vhd** 
+**pumpkin.vhd**
+**timer.vhd**  
+**pwm.vhd**  
+
+If you're using a Pico Board you can use the **myco.lpf** file with Lattice Diamond, this file contains all the pin assignments shown in the diagram below. The switch inputs all have pull-ups enabled and expect to be pulled down when the switches are activated. 
+
+![bock diagram](pictures/myco2.png)
+
+For other FPGAs, different pinning will be required. This project should build on most FPGA tool chains.
 
 
-### Useful links
+## ToDo
 
+* 2 Channel ADC
+* Program storage in external EEPROM
 
-### ToDo
-
-* ADC - 2 channel external ADC
-* Program storage - 
-
-### MIT License
+## MIT License
 
 Copyright (c) 2020 Steve Teal
 
